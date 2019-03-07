@@ -10,7 +10,8 @@ namespace schoolHero {
 			private mainForm()
 			{
 				Rectangle rect = Screen.GetWorkingArea(this);
-				Point p = new Point(rect.Width,rect.Height);
+				Point p = new Point(rect.Width-Width,rect.Height-Height);
+				StartPosition = FormStartPosition.Manual;
 				Console.Write(p);
 				this.Location = p;
             	this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
