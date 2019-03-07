@@ -9,6 +9,10 @@ namespace schoolHero {
 		 ContextMenu context_menu;
 			private mainForm()
 			{
+				Rectangle rect = Screen.GetWorkingArea(this);
+				Point p = new Point(rect.Width,rect.Height);
+				Console.Write(p);
+				this.Location = p;
             	this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             	this.TopMost = true;
 				this.MouseDown += MainFrm_MouseDown;
@@ -25,8 +29,7 @@ namespace schoolHero {
 			}
 			private void InitializeComponent ()
 			{
-				
-				MenuItem AddNew = new MenuItem ("Add");
+								MenuItem AddNew = new MenuItem ("Add");
 				MenuItem itemExit = new MenuItem ("Exit");
 				itemExit.Click += new System.EventHandler(onExit);
 				AddNew.Click += new System.EventHandler(onAddNew);
