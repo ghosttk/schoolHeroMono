@@ -3,12 +3,12 @@ using System.Windows.Forms;
 using System.Drawing;
 using System.IO;
 
-namespace schoolHeros {
+namespace schoolHero {
 public class listForm: Form {
   
         private Button button;
         private ListView list;
-		private listForm ()
+		public listForm ()
 		{
 		    InitializeComponent ();
 		    button = new Button();
@@ -19,10 +19,10 @@ public class listForm: Form {
 		private void InitializeComponent ()
 		{
 		    Size = new Size(900, 600);
-            	    list = new ListView();
+            list = new ListView();
 		    list.Size = new System.Drawing.Size (800, 600);
 		    Controls.Add (list);
-             	    getDirectoryFiles("images");
+            getDirectoryFiles("images");
         }
         private string[] getDirectoryFiles (string dir) 
         {

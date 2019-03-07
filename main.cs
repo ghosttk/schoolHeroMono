@@ -26,10 +26,11 @@ namespace schoolHero {
 			private void InitializeComponent ()
 			{
 				
-				MenuItem item1 = new MenuItem ("File");
+				MenuItem AddNew = new MenuItem ("Add");
 				MenuItem itemExit = new MenuItem ("Exit");
 				itemExit.Click += new System.EventHandler(onExit);
-				MenuItem [] items = new MenuItem [] {item1, itemExit};
+				AddNew.Click += new System.EventHandler(onAddNew);
+				MenuItem [] items = new MenuItem [] {AddNew, itemExit};
 				context_menu = new 	ContextMenu (items);
 
 
@@ -61,8 +62,17 @@ namespace schoolHero {
 			pnt = PointToClient (MousePosition);
 			context_menu.Show (this, pnt);
 			}
+			else
+			{
+				
+			}
 		}
 
+		void onAddNew (Object sender, EventArgs e)
+		{
+			addNewGroupForm lf = new addNewGroupForm();
+			lf.Show();
+		}
 		void onExit(Object sender, EventArgs e)
 		{
 			Application.Exit();
