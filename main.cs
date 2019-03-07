@@ -27,8 +27,9 @@ namespace schoolHero {
 			{
 				
 				MenuItem item1 = new MenuItem ("File");
-				MenuItem item2 = new MenuItem ("Exit");
-				MenuItem [] items = new MenuItem [] {item1, item2};
+				MenuItem itemExit = new MenuItem ("Exit");
+				itemExit.Click += new System.EventHandler(onExit);
+				MenuItem [] items = new MenuItem [] {item1, itemExit};
 				context_menu = new 	ContextMenu (items);
 
 
@@ -60,6 +61,11 @@ namespace schoolHero {
 			pnt = PointToClient (MousePosition);
 			context_menu.Show (this, pnt);
 			}
+		}
+
+		void onExit(Object sender, EventArgs e)
+		{
+			Application.Exit();
 		}
 	}
 }
