@@ -30,7 +30,7 @@ namespace schoolHero {
 			}
 			private void InitializeComponent ()
 			{
-								MenuItem AddNew = new MenuItem ("Add");
+				MenuItem AddNew = new MenuItem ("Add");
 				MenuItem itemExit = new MenuItem ("Exit");
 				itemExit.Click += new System.EventHandler(onExit);
 				AddNew.Click += new System.EventHandler(onAddNew);
