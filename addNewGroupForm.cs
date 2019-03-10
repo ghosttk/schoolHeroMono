@@ -1,12 +1,14 @@
 using System;
 using System.Windows.Forms;
 using System.Xml;
+using System.IO;
 
 namespace schoolHero {
  public   class addNewGroupForm : Form {
         TextBox tbNames, tbGroup;
 	Label lbNames, lbGroup;
 	Button btnOk, openFileDialogBTN;
+	String fName;
 	Panel panel;
 	
         public addNewGroupForm ()
@@ -75,13 +77,14 @@ namespace schoolHero {
             openFileDialog.FilterIndex = 1;
             if (openFileDialog.ShowDialog() == DialogResult.OK)
             {
-			/*
                 fName = openFileDialog.FileName;
-                File fileOpen = new File(fName);
-                isFileHaveName = true;
-                richTextBox1.Text = fileOpen.ReadFile();
-                richTextBox1.AppendText("");
-		    */
+		    tbGroup.Text = fName;
+                string [] lines  = File.ReadAllLines(fName);
+		    foreach(string s in lines)
+		    {
+			    tbNames.AppendText(s);
+		    }
+                tbNames.AppendText("");
             }
         }
     }
