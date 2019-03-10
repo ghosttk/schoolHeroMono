@@ -71,8 +71,8 @@ namespace schoolHero {
         private void openFileDialogBTN_Click(object sender, System.EventArgs e)
         {
             OpenFileDialog openFileDialog = new OpenFileDialog();
-            openFileDialog.InitialDirectory = "c:\\";//注意这里写路径时要用c:\\而不是c:\
-            openFileDialog.Filter = "文本文件|*.*|C#文件|*.cs|所有文件|*.*";
+            openFileDialog.InitialDirectory = "./";//注意这里写路径时要用c:\\而不是c:\
+            openFileDialog.Filter = "文本文件|*.txt|所有文件|*.*";
             openFileDialog.RestoreDirectory = true;
             openFileDialog.FilterIndex = 1;
             if (openFileDialog.ShowDialog() == DialogResult.OK)
@@ -82,6 +82,7 @@ namespace schoolHero {
                 string [] lines  = File.ReadAllLines(fName);
 		    foreach(string s in lines)
 		    {
+			    Console.Write(s);
 			    tbNames.AppendText(s);
 		    }
                 tbNames.AppendText("");
